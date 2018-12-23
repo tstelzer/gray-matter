@@ -30,8 +30,8 @@ declare namespace matter {
     excerpt_separator?: string
     engines?: {
       [index: string]:
-        | ((string) => object)
-        | { parse: (string) => object; stringify?: (object) => string }
+        | ((s: string) => any)
+        | { parse: (s: string) => any; stringify?: (o: any) => string }
     }
     language?: string
     delimiters?: string | [string, string]
@@ -45,7 +45,7 @@ declare namespace matter {
     matter: string
     stringify(lang: string): string
   }
-  
+
   /**
    * Stringify an object to YAML or the specified language, and
    * append it to the given string. By default, only YAML and JSON
